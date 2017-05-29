@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Advanced player for Spotify",
   "author": "garmoshka-mo <dan@dub.ink>",
+  "repository": "https://github.com/garmoshka-mo/spotiplay.git",
   "license": "MIT",
   "scripts": {
     "start": "http-server app -S -p 5000"

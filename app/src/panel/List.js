@@ -56,6 +56,7 @@
             if (!($scope.data && $scope.data.type)) return;
 
             Tabs.state.reading_db = true;
+
             $scope.list_view = $scope.data.type;
             $anchorScroll();
             setTimeout(reload, 1000);

@@ -21,25 +21,28 @@
             return current_tab;
         };
 
-        taba('Playlists', 'playlists', [
+        musicTab('Playlists', 'playlists', [
             {name: 'Name', field: 'name', default: true},
             {name: 'Followers', field: 'followers', reverse: true},
             {name: 'Total tracks', field: 'total', reverse: true}
         ]);
-        taba('Artists', 'artists', [
+        musicTab('Artists', 'artists', [
             {name: 'Name', field: 'name', default: true},
             {name: 'Total tracks', field: 'tracks', reverse: true}
         ]);
-        taba('Tracks', 'tracks', [
+        musicTab('Tracks', 'tracks', [
             {name: 'Name', field: 'name'},
             {name: 'Playlist order', field: 'idx', default: true}
         ]);
-        taba('Albums', 'albums', [
+        musicTab('Albums', 'albums', [
             {name: 'Name', field: 'name', default: true},
             {name: 'Total tracks', field: 'tracks', reverse: true}
         ]);
+        musicTab('Countries report', 'report', [
+            {name: 'Missing tracks', field: 'missing', reverse: true, default: true}
+        ]);
 
-        function taba(title, type, arrange_options) {
+        function musicTab(title, type, arrange_options) {
             var tab = {
                 title: title,
                 type: type,

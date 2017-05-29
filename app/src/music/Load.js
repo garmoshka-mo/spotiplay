@@ -1,13 +1,16 @@
 (function() {
   spoti.service('Load',
-            ['$q', 'SpotiDB', 'oauth', 'GlobalFilter', Load]);
-  function Load($q, SpotiDB, oauth, GlobalFilter) {
+            ['SpotiDB', 'GlobalFilter', 'Report', Load]);
+  function Load(SpotiDB, GlobalFilter, Report) {
 
     this.get_playlists_config = function() {
       return SpotiDB.query('SELECT snapshot_id, is_loaded, id FROM playlists;');
     };
 
     this.get_list = function(table) {
+      if (table == 'report')
+        return Report.build(crazy_mazafaka_query('tracks'));
+      else
         return crazy_mazafaka_query(table)
     };
 

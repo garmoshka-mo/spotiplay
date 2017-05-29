@@ -31,22 +31,22 @@
             $scope.current_tab.filter.the_only_track = false;
         };
 
-        $scope.$watch('state.selectedIndex', function loadTab(selectedIndex) {
+        $scope.$watch('state.selectedIndex', (selectedIndex) => {
             if (preloading) return;
-            load_tab(selectedIndex);
+            loadTab(selectedIndex);
         });
 
         setTimeout(function() {
             Music.reload().then(function() {
                 preloading = false;
-                load_tab(0);
+                loadTab(0);
                  $('#content').show();
                  $('#preloader').hide();
             });
         }, 300);
 
 
-        function load_tab(i) {
+        function loadTab(i) {
             $scope.current_tab = Tabs.select(i);
         }
 

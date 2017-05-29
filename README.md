@@ -7,10 +7,10 @@ Advanced player for Spotify
 
 ![Screenshot](http://2.bp.blogspot.com/-303XBkSl13U/VcRfWA8TGQI/AAAAAAAAAo8/PlqiFkQtvSU/s1600/quick-search.png)
 
-# Tools
+# Development
 
-* `npm start` - to run `http-server` for development. (HTTPS is required by spotify specs)
-* `gulp` - to build
+* `npm start` - to run `http-server` for development. **HTTPS** is required by spotify specs, so open https://localhost:5000/
+* `gulp` - to build production version
 * `bstart_builded.sh` - to run production build
 
 # License
