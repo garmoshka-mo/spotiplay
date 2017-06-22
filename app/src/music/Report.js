@@ -50,7 +50,7 @@
       Object.keys(countries).each((country) => {
         report.push({
           name: country,
-          tracks: countries[country],
+          missing_tracks: self.totalTracks - countries[country],
           totalTracks: self.totalTracks
         });
       });

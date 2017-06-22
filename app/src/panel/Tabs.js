@@ -39,7 +39,7 @@
             {name: 'Total tracks', field: 'tracks', reverse: true}
         ]);
         musicTab('Countries report', 'report', [
-            {name: 'Tracks', field: 'tracks', reverse: false, default: true}
+            {name: 'Missing tracks', field: 'missing_tracks', default: true}
         ]);
 
         function musicTab(title, type, arrange_options) {
