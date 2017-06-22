@@ -15,7 +15,7 @@
             self.mute_current_tab();
             var current_tab = self.tabs[i];
             if (current_tab.type != 'tracks')
-                GlobalFilter.remove_tag(current_tab.type);
+                GlobalFilter.remove_tag(current_tab.type, false);
             self.load_tab(current_tab);
             $emit('tab_changed', current_tab);
             return current_tab;
@@ -39,7 +39,7 @@
             {name: 'Total tracks', field: 'tracks', reverse: true}
         ]);
         musicTab('Countries report', 'report', [
-            {name: 'Missing tracks', field: 'missing', reverse: true, default: true}
+            {name: 'Tracks', field: 'tracks', reverse: false, default: true}
         ]);
 
         function musicTab(title, type, arrange_options) {

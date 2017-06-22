@@ -79,10 +79,10 @@
           self.tags[key] = value;
           $emit('after_tags_affected');
         };
-        this.remove_tag = function(key) {
+        this.remove_tag = function(key, refreshList) {
             delete self.tags[key];
             $emit('after_tags_affected');
-            $emit('list_refresh_request');
+            if (refreshList) $emit('list_refresh_request');
         };
     }
 })();

@@ -13,6 +13,13 @@ function OAuth($q, $location){
     if ($location.port() == 5000) host += ':5000';
 
 
+    function ajaxPromise(query) {
+        var deferred = $q.defer();
+        query.success = deferred.resolve;
+        ajax(query);
+        return deferred.promise;
+    }
+
     function ajax(query) {
         get_token(function(token){
             query.headers = {'Authorization': 'Bearer ' + token};
@@ -111,6 +118,7 @@ function OAuth($q, $location){
 
     return {
         ajax: ajax,
+        ajaxPromise: ajaxPromise,
         get_token: get_token,
         check_arrival_of_access_token: check,
         wipe_tokens: wipe_tokens,

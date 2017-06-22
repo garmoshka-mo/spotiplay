@@ -96,15 +96,6 @@ spoti.config(['$mdThemingProvider', function($mdThemingProvider){
         }]);
     }]);
 
-
-function log() {
-    if (DEBUG) console.log.apply(console, arguments);
-}
-function error(str, obj) {
-    Rollbar.error(str, obj);
-    if (DEBUG) console.error(str, obj);
-    if (toast_something_wrong) toast_something_wrong();
-}
 //document.addEventListener("contextmenu", function(e){
 //    e.preventDefault();
 //}, false);
